@@ -12,6 +12,8 @@ package gladusmath;
 public class TestMath {
     public static void main(String []args){
 //        System.out.println(new MathSolver().solveMultiSimpleFunction("337/17"));
-        System.out.println(new MathSolver().solveMultiSimpleFunction("1+1*2-1/2+5*10/3.5+20/2"));
+        System.out.println("");
+        System.out.println(new MathSolver().solveInstruction("(1+1)*2-1/2+5*10/3.5+20/2"));
     }
 }
+

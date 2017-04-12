@@ -5,8 +5,9 @@
  */
 package gladusmath;
 
+import SQLUtil.MySqlConnect;
 import gladusutil.Components.HashMap;
-import gladusutil.GladusUtil;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,7 +15,7 @@ import gladusutil.GladusUtil;
  */
 public class MathSolver {
 
-    private String function;
+    /*private String function;
 
     public Object solveSimpleFunction(String instruction) {
         Object retorno = null;
@@ -142,5 +143,12 @@ public class MathSolver {
         }
 
         return retorno;
+    }*/
+
+    public String solveInstruction(String function) {
+        String cmd = "SELECT " + function + " RESULTADO FROM DUAL";
+        ArrayList<HashMap> retorno = MySqlConnect.getInstance().executaConsultaPadrao(cmd, false);
+
+        return retorno.get(0).getValueAsString("RESULTADO");
     }
 }
